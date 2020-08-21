@@ -1,0 +1,15 @@
+2020/01/31-11:35:20.143 ddd7 Recovering log #3
+2020/01/31-11:35:20.218 ddd7 Delete type=0 #3
+2020/01/31-11:35:20.218 ddd7 Delete type=3 #2
+2020/01/31-11:35:44.252 eaa4 Level-0 table #7: started
+2020/01/31-11:35:44.271 eaa4 Level-0 table #7: 18574 bytes OK
+2020/01/31-11:35:44.281 eaa4 Delete type=0 #5
+2020/01/31-11:36:07.345 eaa4 Level-0 table #9: started
+2020/01/31-11:36:07.357 eaa4 Level-0 table #9: 18649 bytes OK
+2020/01/31-11:36:07.373 eaa4 Delete type=0 #6
+2020/01/31-11:36:30.439 eaa4 Level-0 table #11: started
+2020/01/31-11:36:30.453 eaa4 Level-0 table #11: 18656 bytes OK
+2020/01/31-11:36:30.463 eaa4 Delete type=0 #8
+2020/01/31-11:37:06.229 eaa4 Level-0 table #13: started
+2020/01/31-11:37:06.252 eaa4 Level-0 table #13: 18716 bytes OK
+2020/01/31-11:37:06.266 eaa4 Delete type=0 #10
