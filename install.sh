@@ -61,7 +61,7 @@ APPVERSION="$(curl -LSs $REPORAW/master/version.txt)"
 # Setup plugins
 
 PLUGNAMES=""
-PLUGDIR="${SHARE:-$HOME/.local/share}"
+PLUGDIR="${SHARE:-$HOME/.local/share}/$APPNAME"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
