@@ -54,7 +54,7 @@ APPNAME="${APPNAME:-chromium}"
 APPDIR="${APPDIR:-$HOME/.config/$APPNAME}"
 REPO="${DFMGRREPO:-https://github.com/dfmgr}/${APPNAME}"
 REPORAW="${REPORAW:-$REPO/raw}"
-APPVERSION="$(curl -LSs $REPORAW/master/version.txt)"
+APPVERSION="$(__appversion)"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -139,15 +139,15 @@ ensure_perms
 
 # Main progam
 
-if [ -d "$APPDIR/.git" ]; then
+if [ -d "$DOWNLOADED_TO/.git" ]; then
     execute \
-    "git_update $APPDIR" \
-    "Updating $APPNAME configurations"
+        "git_update $APPDIR" \
+        "Updating $APPNAME configurations"
 else
     execute \
-    "backupapp && \
+        "backupapp && \
         git_clone -q $REPO/$APPNAME $APPDIR" \
-    "Installing $APPNAME configurations"
+        "Installing $APPNAME configurations"
 fi
 
 # exit on fail
@@ -160,12 +160,12 @@ failexitcode
 if [ "$PLUGNAMES" != "" ]; then
     if [ -d "$PLUGDIR"/PLUREP/.git ]; then
         execute \
-        "git_update $PLUGDIR/PLUGREP" \
-        "Updating plugin PLUGNAME"
+            "git_update $PLUGDIR/PLUGREP" \
+            "Updating plugin PLUGNAME"
     else
         execute \
-        "git_clone PLUGINREPO $PLUGDIR/PLUGREP" \
-        "Installing plugin PLUGREP"
+            "git_clone PLUGINREPO $PLUGDIR/PLUGREP" \
+            "Installing plugin PLUGREP"
     fi
 fi
 
@@ -181,8 +181,8 @@ run_postinst() {
 }
 
 execute \
-"run_postinst" \
-"Running post install scripts"
+    "run_postinst" \
+    "Running post install scripts"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
