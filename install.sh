@@ -52,6 +52,7 @@ scripts_check
 # Defaults
 APPNAME="${APPNAME:-chromium}"
 APPDIR="${APPDIR:-$HOME/.config/$APPNAME}"
+INSTDIR="${INSTDIR}"
 REPO="${DFMGRREPO:-https://github.com/dfmgr}/${APPNAME}"
 REPORAW="${REPORAW:-$REPO/raw}"
 APPVERSION="$(__appversion)"
@@ -143,13 +144,13 @@ if [ -d "$APPDIR" ]; then
   execute "backupapp $APPDIR $APPNAME" "Backing up $APPDIR"
 fi
 
-if [ -d "$DOWNLOADED_TO/.git" ]; then
+if [ -d "$INSTDIR/.git" ]; then
   execute \
-    "git_update $DOWNLOADED_TO" \
+    "git_update $INSTDIR" \
     "Updating $APPNAME configurations"
 else
   execute \
-    "git_clone $REPO/$APPNAME $DOWNLOADED_TO" \
+    "git_clone $REPO/$APPNAME $INSTDIR" \
     "Installing $APPNAME configurations"
 fi
 
