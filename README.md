@@ -5,7 +5,7 @@ an open-source graphical web browser
 Automatic install/update:
 
 ```shell
-bash -c "$(curl -LSs https://github.com/dfmgr/chromium/raw/master/install.sh)"
+bash -c "$(curl -LSs https://github.com/dfmgr/chromium/raw/main/install.sh)"
 ```
 
 Manual install:
