@@ -70,6 +70,7 @@ fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Define custom functions
 __download_file() { curl -q -LSsf "$1" -o "$2" || return 1; }
+chromium() { __cmd_exists chromium || __cmd_exists chromium-browser || return 1; }
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # OS Support: supported_os unsupported_oses
 supported_os linux mac windows
