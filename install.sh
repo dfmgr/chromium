@@ -175,6 +175,9 @@ RUBY_GEMS=""
 PYTHON_PIP=""
 PHP_COMPOSER=""
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Run custom actions
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Show a custom message after install
 __run_post_message() {
   true
@@ -197,7 +200,8 @@ __run_prepost_install() {
 # run after primary post install function
 __run_post_install() {
   local getRunStatus=0
-  __cmd_exists "chromium-browser" || __symlink "$(builtin type -P "chromium-browser")" "$HOME/.local/bin/chromium"
+  chromium_browser="$(builtin type -P "chromium-browser"|grep -v "$HOME"|grep '^'||false)"
+  [ -n "$chromium_browser" ] && __symlink "$chromium_browser" "$HOME/.local/bin/chromium"
   return $getRunStatus
 }
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
